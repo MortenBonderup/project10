@@ -1,0 +1,38 @@
+When a user updates an existing article, the following steps occur:
+
+1. **User Initiates Edit**:
+   - The user clicks the "Edit" button next to the article they want to update.
+   - This triggers the `handleEdit` function.
+
+2. **Preparing for Edit**:
+   - The `handleEdit` function sets the `currentArticle` state to the article's current title and content.
+   - It also sets the `isEditing` state to `true` and stores the index of the article being edited in the `editIndex` state.
+
+3. **Form Pre-Filled**:
+   - The form fields (title and content) are pre-filled with the article's existing data, allowing the user to make changes.
+
+4. **User Makes Changes**:
+   - The user modifies the title and/or content in the input fields.
+   - The `handleChange` function updates the `currentArticle` state with the new values as the user types.
+
+5. **Form Submission**:
+   - The user clicks the "Update Article" button to submit the form.
+   - The `handleSubmit` function is triggered by the form submission event.
+
+6. **Form Submission Handling**:
+   - The `handleSubmit` function first prevents the default form submission behavior using `e.preventDefault()`.
+   - It checks if the user is editing an existing article (`isEditing` state).
+
+7. **Updating the Article**:
+   - Since the user is editing an existing article (`isEditing` is `true`), the function updates the article at the `editIndex` position in the `articles` state array with the new `currentArticle` data.
+   - The `setArticles` function is used to update the `articles` state with the modified article.
+
+8. **Resetting the Form**:
+   - After updating the article, the `currentArticle` state is reset to an empty title and content (`{ title: '', content: '' }`).
+   - The `isEditing` state is set to `false`, and the `editIndex` state is set to `null`.
+   - This clears the input fields and exits the editing mode.
+
+9. **Rendering the Updated List**:
+   - The component re-renders, displaying the updated list of articles, including the changes made to the edited article.
+   - Each article in the list is displayed with its updated title, content, and buttons for editing and deleting.
+

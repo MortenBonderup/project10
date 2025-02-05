@@ -1,0 +1,15 @@
+When a user deletes an article, the following steps occur:
+
+1. **User Initiates Delete**:
+   - The user clicks the "Delete" button next to the article they want to remove.
+   - This triggers the `handleDelete` function.
+
+2. **Deleting the Article**:
+   - The `handleDelete` function receives the index of the article to be deleted.
+   - It creates a new array of articles by filtering out the article at the specified index.
+   - The `setArticles` function is used to update the `articles` state with this new array, effectively removing the selected article.
+
+3. **Rendering the Updated List**:
+   - The component re-renders, displaying the updated list of articles without the deleted one.
+   - Each remaining article in the list is displayed with its title, content, and buttons for editing and deleting.
+

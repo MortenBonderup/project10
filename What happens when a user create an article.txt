@@ -1,0 +1,31 @@
+When a user deletes an existing article, the following steps occur:
+
+1. **User Input**:
+   - The user enters a title in the text input field and content in the textarea.
+
+2. **State Update on Input Change**:
+   - As the user types, the `handleChange` function is called for each input change.
+   - This function updates the `currentArticle` state with the new values from the input fields.
+
+3. **Form Submission**:
+   - The user clicks the "Create Article" button to submit the form.
+   - The `handleSubmit` function is triggered by the form submission event.
+
+4. **Form Submission Handling**:
+   - The `handleSubmit` function first prevents the default form submission behavior using `e.preventDefault()`.
+   - It then checks if the user is editing an existing article (`isEditing` state).
+
+5. **Creating a New Article**:
+   - Since the user is creating a new article (`isEditing` is `false`), the function adds the `currentArticle` to the `articles` state array using the `setArticles` function.
+   - The new article is appended to the existing list of articles.
+
+6. **Resetting the Form**:
+   - After adding the new article, the `currentArticle` state is reset to an empty title and content (`{ title: '', content: '' }`).
+   - This clears the input fields, making them ready for the next article creation.
+
+7. **Rendering the Updated List**:
+   - The component re-renders, displaying the updated list of articles, including the newly created one.
+   - Each article in the list is displayed with its title, content, and buttons for editing and deleting.
+
+
+This flow ensures that the user can easily create new articles and see them immediately in the list. If you have any more questions or need further clarification, feel free to ask!
