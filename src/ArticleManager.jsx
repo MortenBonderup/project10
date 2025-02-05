@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import styles from './ArticleManager.module.css';
 
 function ArticleManager() {
@@ -28,6 +28,8 @@ function ArticleManager() {
     }
 
     function handleDelete(index) {
+        // The underscore (_) is used as a placeholder. 
+        // This is a common convention to indicate that the parameter is intentionally unused.
         const updatedArticles = articles.filter((_, i) => i !== index);
         setArticles(updatedArticles);
     }
